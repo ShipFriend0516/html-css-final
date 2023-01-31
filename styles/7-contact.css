@@ -1,0 +1,230 @@
+#contact {
+  background-color: var(--color-light-bg);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.contact {
+  margin-top: 3em;
+}
+
+.contact_tab {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: var(--font-size-larger);
+}
+
+.contact_btn1::after {
+  content: '연락처';
+  display: inline-block;
+  background-color: white;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  padding: 0.8em 2em;
+}
+
+.contact_btn2::after {
+  content: '메시지';
+  display: inline-block;
+  background-color: white;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 0.8em 2em;
+}
+
+
+input[type=radio] {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+}
+
+input[type=radio]:checked::after {
+  color: white;
+  background-color: var(--color-main);
+}
+
+.contact_slides {
+  margin: 1.6em 0;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.contact_slide-con {
+  display: flex;
+  width: 200vw;
+  transition: margin-left 500ms;
+}
+
+.contact_slide {
+  width: 100vw;
+}
+
+.contact_btn2:checked ~ .contact_slides > .contact_slide-con:first-child  {
+  margin-left: -100vw;
+}
+
+.contact_contacts {
+  margin: 0 auto;
+  color: var(--color-text);
+}
+
+
+.contact_contacts th {
+  padding-right: 3em;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: right;
+  color: var(--color-dark);
+  border-right: 4px solid var(--color-light-bd);
+}
+
+.contact_contacts a:hover {
+  text-decoration: underline var(--color-emph);
+  color: var(--color-emph);
+}
+
+.contact_contacts img {
+  margin-right: 0.1em;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+}
+
+.contact_leave {
+  display: inline-flex;
+  margin-top: 1em;
+  gap: 8px;
+}
+
+.contact_leave * {
+  font-size: var(--font-size-text);
+}
+
+.contact_leave ::placeholder {
+  color: var(--color-lighter);
+}
+
+.contact_leave textarea {
+  border: 2px solid var(--color-light-bd);
+  resize: none;
+  padding: 0.6em;
+  width: 80vw;
+}
+
+.contact_leave input[type=email] {
+  border: 2px solid var(--color-light-bd);
+  padding: 0.6em;
+  width: 80vw;
+}
+
+.contact_leave button[type=submit] {
+  all: unset;
+  padding: 0.6em;
+  /* width: 80vw; */
+  height: 64px;
+  line-height: 64px;
+  color: white;
+  background-color: var(--color-sub);
+  cursor: pointer;
+  transition: all 350ms;
+}
+
+.contact_leave textarea:focus-visible , .contact_leave input:focus-visible {
+  border: 2px solid var(--color-sub);
+  outline: none;
+}
+
+.contact_leave div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact_leave button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .contact_contacts {
+    text-align: left;
+  }
+
+  .contact_contacts th {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .contact_contacts tr > * {
+    padding: 0.6em;
+  }
+  .contact_contacts td::before {
+    content: '▶';
+    margin-right: 0.6em;
+    font-size: 0.67em;
+    opacity: 0.5;
+  }
+
+  .contact_leave {
+    flex-direction: column;
+  }
+
+  .contact_leave button {
+    width: 80vw;
+  }
+
+}
+
+@media (min-width: 769px) {
+
+  #contact {
+    grid-column: 1/-1;
+  }
+
+  .contact_btn1::after {
+    content: '연락처 보기';
+  }
+  .contact_btn2::after {
+    content: '메시지 남기기';
+  }
+
+  .contact_contacts {
+    border-spacing: 3em 1em;
+  }
+
+  .contact_btn1::after {
+    padding: 0.8em 4em;
+  }
+  
+  .contact_btn2::after {
+    padding: 0.8em 4em;
+  }
+
+  .contact_leave {
+    display: inline-flex;
+    flex-direction: row;
+  }
+
+  .contact_leave textarea {
+    width: 30vw;
+    height: 120px;
+  }
+
+  .contact_leave input[type=email] {
+    width: 360px;
+  }
+
+  .contact_leave button {
+    width: 360px;
+
+  }
+
+
+}
